@@ -7,11 +7,9 @@ import { UsuarioGuardService } from './guards/usuario-guard.service';
 const appRoutes: Routes =  [
   {path: '', component: LoginComponent},
   {path: 'mensajes', component: MensajesComponent, canActivate: [UsuarioGuardService]},
+  {path: 'mensaje/:id', component: MensajesComponent, canActivate: [UsuarioGuardService]},
   {path: '**', component: LoginComponent}
 ];
-
-
-
 
 
 @NgModule({

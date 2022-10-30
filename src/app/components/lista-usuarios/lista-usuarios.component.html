@@ -1,1 +1,12 @@
-<p>lista-usuarios works!</p>
+<h1>Usuarios</h1>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let usuario of usuariosActivosObs | async">
+        <a [routerLink]="['/mensaje', usuario.id]" routerLinkActive="router-link-active">
+        {{usuario.nombre}}
+        <span class="badge badge-primay">{{usuario.sala}}</span>
+        <br>
+        <span class="badge badge-info">{{usuario.id}}</span>
+      </a>
+    </li>
+</ul>

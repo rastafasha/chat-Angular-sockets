@@ -21,12 +21,12 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.elemento = document.getElementById('chat-Mensajes');
 
     this.mensajesSubcription = this.chatService.getMessage().subscribe( msg => {
-      //console.log(msg);
+
       this.mensajes.push(msg); // recibimos el nuevo mensaje
 
       setTimeout( () => {
         this.elemento.scrollTop = this.elemento.scrollHeight;
-      },30);
+      },50);
     })
 
   }
@@ -37,7 +37,7 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   enviar(){
     //evitar enviar mensaje vacio
-    if(this.texto.trim().length == 0){
+    if(this.texto.trim().length === 0){
       return;
     }
 
